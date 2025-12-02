@@ -21,6 +21,7 @@
   width: 620px;
   height: 100%;
   padding: 20px 40px 20px 40px;
+  box-sizing: border-box;
   background: linear-gradient(180deg, rgba(55, 31, 94, 1) 0%, rgba(0, 0, 0, 0.9) 30.29%);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
@@ -37,7 +38,7 @@
   line-height: 40px;
   color: #ffffff;
   text-align: center;
-  margin-top: 45px;
+  margin-top: 35px;
 }
 
 .sort {
