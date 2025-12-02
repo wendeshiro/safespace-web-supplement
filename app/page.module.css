@@ -20,7 +20,7 @@
   left: 0;
   width: 620px;
   height: 100%;
-  padding: 20px 40px 20px 40px;
+  padding: 20px 40px;
   background: linear-gradient(180deg, rgba(55, 31, 94, 1) 0%, rgba(0, 0, 0, 0.9) 30.29%);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
@@ -52,7 +52,6 @@
   flex: 1;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-  align-self: center;
 }
 
 .reportList::-webkit-scrollbar {

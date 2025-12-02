@@ -34,9 +34,9 @@ export default function testPage() {
 
       {/* Sidebar */}
       <div className={styles.sidebar}>
-        {/* <ReportDetails /> */}
+        <ReportDetails />
         {/* <Dialog /> */}
-        <SummaryResult />
+        {/* <SummaryResult /> */}
       </div>
 
       {/* Location Bar */}
