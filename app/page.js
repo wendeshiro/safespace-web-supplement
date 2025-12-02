@@ -56,6 +56,10 @@ export default function PostedReports() {
       <div className={styles.locationBarWrapper}>
         <LocationBar location="3700 Willingdon Avenue, Burnaby" />
       </div>
+      <div className={styles.logoWrapper}>
+        <img src="/logo.svg" alt="Logo" className={styles.logo} />
+        <p>SafeSpace</p>
+      </div>
     </main>
   );
 }
