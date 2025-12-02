@@ -61,7 +61,7 @@
 
 .locationBarWrapper {
   position: absolute;
-  top: 48px;
+  top: 30px;
   /* left: calc(41.67% + 42px);
   width: 792px; */
   left: calc(620px + 40px);
