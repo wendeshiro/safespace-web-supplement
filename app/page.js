@@ -2,6 +2,7 @@ import styles from "./page.module.css";
 import ReportCard from "./components/ReportCard";
 import Button from "./components/Button";
 import Sort from "./components/Sort";
+import LocationBar from "./components/LocationBar";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Button variant="tertiary">Summarize Posts</Button>
       <Button variant="secondary">Cancel</Button>
       <Sort />
+      <LocationBar location="3700 Willingdon Avenue, Burnaby BC" />
     </div>
   );
 }
