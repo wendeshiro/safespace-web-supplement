@@ -10,7 +10,7 @@ import LocationBar from "./components/LocationBar";
 import reports from "./data/report.json";
 import Dialog from "./components/Dialog";
 import ReportDetails from "./components/ReportDetails";
-
+import SummaryResult from "./components/SummaryResult";
 
 // Dynamically import Map component with no SSR
 const Map = dynamic(() => import("./components/Map"), {
@@ -23,6 +23,7 @@ export default function PostedReports() {
   const [highlightedReportId, setHighlightedReportId] = useState(null);
   const [sortOrder, setSortOrder] = useState("Newest");
   const [showDialog, setShowDialog] = useState(false);
+  const [showSummary, setShowSummary] = useState(false);
   const reportRefs = useRef({});
 
   const mapMarkers = [
@@ -33,9 +34,10 @@ export default function PostedReports() {
   ];
 
   const handleMarkerClick = (id) => {
-    // If we are in details view, go back to list view first
-    if (selectedReport) {
+    // If we are in details view or summary view, go back to list view first
+    if (selectedReport || showSummary) {
       setSelectedReport(null);
+      setShowSummary(false);
       // Wait for render to switch back to list before scrolling
       setTimeout(() => scrollToReport(id), 100);
     } else {
@@ -61,6 +63,11 @@ export default function PostedReports() {
     setSortOrder((prev) => (prev === "Newest" ? "Oldest" : "Newest"));
   };
 
+  const handleGenerateSummary = () => {
+    setShowDialog(false);
+    setShowSummary(true);
+  };
+
   const sortedReports = [...reports].sort((a, b) => {
     const dateA = new Date(a.date);
     const dateB = new Date(b.date);
@@ -78,11 +85,15 @@ export default function PostedReports() {
         />
       </div>
 
-      {showDialog && <Dialog onClose={() => setShowDialog(false)} />}
+      {showDialog && (
+        <Dialog onClose={() => setShowDialog(false)} onGenerate={handleGenerateSummary} />
+      )}
 
       {/* Sidebar */}
       <div className={styles.sidebar}>
-        {selectedReport ? (
+        {showSummary ? (
+          <SummaryResult onBack={() => setShowSummary(false)} />
+        ) : selectedReport ? (
           <ReportDetails report={selectedReport} onBack={() => setSelectedReport(null)} />
         ) : (
           <>

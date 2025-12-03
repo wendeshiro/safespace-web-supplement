@@ -2,7 +2,7 @@ import styles from "./Dialog.module.css";
 import Button from "./Button";
 import { ChevronDown } from "lucide-react";
 
-const Dialog = ({ onClose }) => {
+const Dialog = ({ onClose, onGenerate }) => {
   return (
     <div className={styles.overlay}>
       <div className={styles.container}>
@@ -25,7 +25,7 @@ const Dialog = ({ onClose }) => {
           <Button variant="secondary" className={styles.button} onClick={onClose}>
             Cancel
           </Button>
-          <Button variant="primary" className={styles.button}>
+          <Button variant="primary" className={styles.button} onClick={onGenerate}>
             Generate Summary
           </Button>
         </div>

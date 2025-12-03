@@ -1,10 +1,31 @@
+import { useState, useEffect } from "react";
 import styles from "./SummaryResult.module.css";
 import BackButton from "./BackButton";
+import Loading from "./Loading";
 
-export default function SummaryResult() {
+export default function SummaryResult({ onBack }) {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className={styles.container}>
+        <BackButton className={styles.backButton} onClick={onBack} />
+        <Loading />
+      </div>
+    );
+  }
+
   return (
     <div className={styles.container}>
-      <BackButton className={styles.backButton} />
+      <BackButton className={styles.backButton} onClick={onBack} />
 
       <div className={styles.header}>
         <h1 className={styles.title}>3700 Willingdon Avenue, Burnaby</h1>
