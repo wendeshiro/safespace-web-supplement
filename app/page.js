@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import dynamic from "next/dynamic";
 import styles from "./page.module.css";
 import Button from "./components/Button";
@@ -18,19 +18,50 @@ const Map = dynamic(() => import("./components/Map"), {
 
 export default function PostedReports() {
   const [selectedReport, setSelectedReport] = useState(null);
+  const [highlightedReportId, setHighlightedReportId] = useState(null);
+  const reportRefs = useRef({});
 
   const mapMarkers = [
-    { id: 1, position: [49.2488, -123.0016], title: "Incident 1" },
-    { id: 2, position: [49.252, -123.01], title: "Incident 2" },
-    { id: 3, position: [49.245, -122.995], title: "Incident 3" },
-    { id: 4, position: [49.255, -123.005], title: "Incident 4" },
+    { id: 1, position: [49.2488, -123.0016], title: "Harassment" },
+    { id: 2, position: [49.252, -123.01], title: "Discrimination, Sexism" },
+    { id: 3, position: [49.245, -122.995], title: "Bullying, Discrimination" },
+    { id: 4, position: [49.255, -123.005], title: "Intimidation, Aggression" },
   ];
+
+  const handleMarkerClick = (id) => {
+    // If we are in details view, go back to list view first
+    if (selectedReport) {
+      setSelectedReport(null);
+      // Wait for render to switch back to list before scrolling
+      setTimeout(() => scrollToReport(id), 100);
+    } else {
+      scrollToReport(id);
+    }
+  };
+
+  const scrollToReport = (id) => {
+    setHighlightedReportId(id);
+
+    // Remove highlight after animation (3s total for 3 flashes)
+    setTimeout(() => {
+      setHighlightedReportId(null);
+    }, 3000);
+
+    const element = reportRefs.current[id];
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
 
   return (
     <main className={styles.main}>
       {/* Map Area */}
       <div className={styles.mapArea}>
-        <Map markers={mapMarkers} />
+        <Map
+          markers={mapMarkers}
+          onMarkerClick={handleMarkerClick}
+          selectedMarkerId={selectedReport?.id || highlightedReportId}
+        />
       </div>
 
       {/* Sidebar */}
@@ -49,6 +80,7 @@ export default function PostedReports() {
               {reports.map((report) => (
                 <ReportCard
                   key={report.id}
+                  ref={(el) => (reportRefs.current[report.id] = el)}
                   tags={report.tags}
                   title={report.title}
                   location={report.location}
@@ -56,6 +88,7 @@ export default function PostedReports() {
                   timestamp={report.timestamp}
                   excerpt={report.summary}
                   onDetailsPress={() => setSelectedReport(report)}
+                  isHighlighted={highlightedReportId === report.id}
                 />
               ))}
             </div>
