@@ -43,14 +43,15 @@ export default function Map({ markers = [], onMarkerClick, selectedMarkerId }) {
   }, []);
 
   // Center on Burnaby, BC
-  const center = [49.2488, -123.0016];
+  // const center = [49.2488, -123.0016];
+  const center = [49.253, -123.029];
   const defaultIcon = createCustomIcon(false);
   const selectedIcon = createCustomIcon(true);
 
   return (
     <MapContainer
       center={center}
-      zoom={13}
+      zoom={14}
       style={{ height: "100%", width: "100%" }}
       zoomControl={false} // Hide zoom control for cleaner background look
     >
