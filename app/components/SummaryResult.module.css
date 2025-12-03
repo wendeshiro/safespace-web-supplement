@@ -38,9 +38,11 @@
   gap: 12px;
   width: 100%;
 }
+
 .actionSection {
   margin-bottom: 30px;
 }
+
 .sectionTitle {
   font-weight: 500;
   font-size: 20px;
@@ -48,37 +50,10 @@
   margin: 0;
 }
 
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.chip {
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 999px;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.chipText {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  margin: 0;
-}
-
 .summaryHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.aiLabel {
-  color: #b0b0b0;
-  font-size: 16px;
 }
 
 .summaryText {
@@ -104,4 +79,9 @@
 
 .backButton {
   align-self: flex-start;
+}
+
+.listItem {
+  list-style-type: disc;
+  margin-left: 20px;
 }

@@ -20,7 +20,7 @@
   left: 0;
   width: 620px;
   height: 100%;
-  padding: 20px 40px 20px 40px;
+  padding: 20px 40px;
   background: linear-gradient(180deg, rgba(55, 31, 94, 1) 0%, rgba(0, 0, 0, 0.9) 30.29%);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
@@ -52,7 +52,6 @@
   flex: 1;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-  align-self: center;
 }
 
 .reportList::-webkit-scrollbar {
@@ -61,7 +60,7 @@
 
 .locationBarWrapper {
   position: absolute;
-  top: 48px;
+  top: 30px;
   /* left: calc(41.67% + 42px);
   width: 792px; */
   left: calc(620px + 40px);
@@ -69,15 +68,8 @@
   z-index: 20;
 }
 
-.mapPin {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  color: #8449df;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
-
 .logoWrapper {
-  z-index: 999;
+  z-index: 15;
   position: absolute;
   top: 22px;
   left: 230px;
@@ -92,5 +84,10 @@
 }
 
 .logo {
-  width: 30px;
+  width: 40px;
+  height: 40px;
+}
+
+.backButton {
+  align-self: flex-start;
 }

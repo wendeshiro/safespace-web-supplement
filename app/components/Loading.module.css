@@ -1,0 +1,74 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  /* Padding is handled by the parent container in SummaryResult */
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.bar {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.titleBar {
+  height: 28px;
+}
+
+.subtitleBar {
+  height: 16px;
+}
+
+.sectionTitleBar {
+  height: 24px;
+}
+
+.contentBlock {
+  height: 114px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 100%;
+}
+
+.textLines {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.textLine {
+  height: 20px;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 100%;
+}
+
+.shortLine {
+  width: 60%;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.animate {
+  animation: pulse 1.5s infinite ease-in-out;
+}

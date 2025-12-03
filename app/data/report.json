@@ -1,29 +1,62 @@
 [
   {
     "id": 1,
-    "tags": ["Carpentry", "Discrimination"],
-    "title": "On-Site Discrimination and Harassment",
-    "location": "4376 Gilpin Cres, Burnaby BC",
-    "date": "November 4, 2025",
-    "timestamp": "10:15 PM",
-    "summary": "During a worksite interaction, several workers engaged in repeated instances of discriminatory and harassing behavior directed toward a female coworker and others on site. The incident involved the use of derogatory language, exclusionary behavior, and comments that reinforced gender-based bias and hostility."
+    "tags": ["Harassment"],
+    "title": "Repeated Sexual Comments From Coworker",
+    "location": "SE 6, 2 Roper Ave, Burnaby, BC V5G 3L1",
+    "date": "November 15, 2025",
+    "timestamp": "2:45 PM",
+    "summary": "A tradeswoman reported that a male coworker in her carpentry crew repeatedly made sexual comments about her appearance while they were working in the framing area. The remarks occurred over several weeks, often when the two were assigned to the same section of the site. She stated that the comments made her feel uncomfortable and distracted, and noted that attempts to ignore or redirect the behavior did not stop it. Several other workers in the vicinity overheard the comments but did not intervene.",
+    "actions": [
+      "Conduct a supervisor-led conversation with the involved worker outlining zero-tolerance expectations.",
+      "Provide a respect and harassment awareness refresher for the entire crew.",
+      "Assign a peer safety/Respect Lead to monitor workplace conduct.",
+      "Ensure the worker reporting the incident is not required to work directly beside the individual until the issue is resolved."
+    ]
   },
   {
     "id": 2,
-    "tags": ["Discrimination", "Racism"],
-    "title": "Racial Discrimination Toward An Apprentice",
-    "location": "2095 Commissioner Street, Vancouver, BC",
-    "date": "November 6, 2025",
-    "timestamp": "5:15 PM",
-    "summary": "During a morning break at the North Dock construction site, several workers were overheard making discriminatory remarks toward a recently hired apprentice who identifies as Indigenous."
+    "tags": ["Discrimination", "Sexism"],
+    "title": "Exclusion From Key Electrical Tasks",
+    "location": "SE 1, Roper Ave, Burnaby, BC V5G 4B5",
+    "date": "November 12, 2025",
+    "timestamp": "9:15 AM",
+    "summary": "A nonbinary electrician reported being repeatedly excluded from complex wiring tasks. Their supervisor consistently reassigned them to “lighter” or “clean-up” duties, stating that the heavy work “might be too much.” Meanwhile, less experienced male apprentices were given skill-building assignments. The employee expressed frustration, stating that this unequal distribution of tasks limited their training opportunities and contributed to feelings of being undervalued on the crew.",
+    "actions": [
+      "Establish a task rotation system to ensure fair skill-building opportunities.",
+      "Provide supervisory training on bias awareness and equitable task distribution.",
+      "Document work assignments weekly for transparency and review.",
+      "Conduct follow-up check-ins with the reporting worker to ensure concerns are addressed."
+    ]
   },
   {
     "id": 3,
-    "tags": ["Tag name 1", "Tag name 2"],
-    "title": "Title generated based on summary",
-    "location": "123 Location Street, Vancouver",
-    "date": "November 6, 2025",
-    "timestamp": "10:15 PM",
-    "summary": "Lorem ipsum dolor sit amet consectetur. Neque turpis id vulputate malesuada amet pellentesque leo vel. Sapien eget cras ac neque feugiat porta elementum felis pharetra. Ut consequat dui malesuada odio posuere tristique habitasse gravida in."
+    "tags": ["Bullying", "Discrimination"],
+    "title": "Crew Teasing and Isolation of Apprentice",
+    "location": "SE12, 3700, Willingdon Ave, Burnaby, BC V5G 3H2",
+    "date": "November 8, 2025",
+    "timestamp": "7:50 AM",
+    "summary": "A young trans apprentice plumber reported experiencing ongoing teasing and exclusion from her crew. Workers routinely mocked her voice and appearance, and she was frequently left out of group discussions and morning briefings. The apprentice described feeling isolated and unsure where to stand or who to ask for help, which affected both her confidence and ability to learn safely. No physical threats were reported, but the emotional impact was significant.",
+    "actions": [
+      "Facilitate a mediated conversation between the apprentice, site supervisor, and HR.",
+      "Deliver a toolbox talk on inclusive language and respectful communication.",
+      "Pair the apprentice with a trained mentor outside of the immediate crew.",
+      "Implement a zero-tolerance stance on bullying and enforce consequences for repeat offenders."
+    ]
+  },
+  {
+    "id": 4,
+    "tags": ["Intimidation", "Aggression"],
+    "title": "Threatening Behavior During Equipment Dispute",
+    "location": "SE 10, Roper Ave, Burnaby, BC V5G",
+    "date": "November 3, 2025",
+    "timestamp": "1:30 PM",
+    "summary": "A queer metalworker reported that during a dispute over shared equipment, a male coworker stepped aggressively into their space, raised his voice, and slammed a tool onto the workbench beside them. The employee interpreted the gesture as intentionally intimidating. They quickly left the area and reported feeling unsafe returning to that task station. Though no physical contact occurred, the escalation created a hostile and unsafe environment.",
+    "actions": [
+      "Investigate the incident formally and document statements from both parties.",
+      "Require de-escalation training for all crew leads and high-conflict trades teams.",
+      "Temporarily separate the workers into different zones while review is ongoing.",
+      "Reinforce clear consequences for aggressive or threatening behavior."
+    ]
   }
 ]

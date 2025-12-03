@@ -18,9 +18,14 @@ const fixLeafletIcon = () => {
   });
 };
 
-const createCustomIcon = () => {
+const createCustomIcon = (isSelected) => {
   const iconHtml = renderToStaticMarkup(
-    <MapPin size={50} color="#8449DF" fill="#fefefeff" strokeWidth={1.8} />
+    <MapPin
+      size={50}
+      color={isSelected ? "#8449DF" : "#8449DF"}
+      fill={isSelected ? "#8449DF" : "#fefefeff"}
+      strokeWidth={1.8}
+    />
   );
 
   return L.divIcon({
@@ -32,19 +37,21 @@ const createCustomIcon = () => {
   });
 };
 
-export default function Map({ markers = [] }) {
+export default function Map({ markers = [], onMarkerClick, selectedMarkerId }) {
   useEffect(() => {
     fixLeafletIcon();
   }, []);
 
   // Center on Burnaby, BC
-  const center = [49.2488, -123.0016];
-  const customIcon = createCustomIcon();
+  // const center = [49.2488, -123.0016];
+  const center = [49.253, -123.029];
+  const defaultIcon = createCustomIcon(false);
+  const selectedIcon = createCustomIcon(true);
 
   return (
     <MapContainer
       center={center}
-      zoom={13}
+      zoom={14}
       style={{ height: "100%", width: "100%" }}
       zoomControl={false} // Hide zoom control for cleaner background look
     >
@@ -53,7 +60,18 @@ export default function Map({ markers = [] }) {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       {markers.map((marker) => (
-        <Marker key={marker.id} position={marker.position} icon={customIcon}>
+        <Marker
+          key={marker.id}
+          position={marker.position}
+          icon={marker.id === selectedMarkerId ? selectedIcon : defaultIcon}
+          eventHandlers={{
+            click: () => {
+              if (onMarkerClick) {
+                onMarkerClick(marker.id);
+              }
+            },
+          }}
+        >
           <Popup>{marker.title}</Popup>
         </Marker>
       ))}
