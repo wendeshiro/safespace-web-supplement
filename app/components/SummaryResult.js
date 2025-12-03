@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import styles from "./SummaryResult.module.css";
-import BackButton from "./BackButton";
 import Loading from "./Loading";
 
-export default function SummaryResult({ onBack }) {
+export default function SummaryResult() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -17,7 +16,6 @@ export default function SummaryResult({ onBack }) {
   if (loading) {
     return (
       <div className={styles.container}>
-        <BackButton className={styles.backButton} onClick={onBack} />
         <Loading />
       </div>
     );
@@ -25,8 +23,6 @@ export default function SummaryResult({ onBack }) {
 
   return (
     <div className={styles.container}>
-      <BackButton className={styles.backButton} onClick={onBack} />
-
       <div className={styles.header}>
         <h1 className={styles.title}>3700 Willingdon Avenue, Burnaby</h1>
         <div className={styles.meta}>

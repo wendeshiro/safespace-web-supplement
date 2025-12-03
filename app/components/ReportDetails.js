@@ -1,13 +1,10 @@
 import styles from "./ReportDetails.module.css";
-import BackButton from "./BackButton";
 
-export default function ReportDetails({ report, onBack }) {
+export default function ReportDetails({ report }) {
   if (!report) return null;
 
   return (
     <div className={styles.container}>
-      <BackButton className={styles.backButton} onClick={onBack} />
-
       <div className={styles.header}>
         <h1 className={styles.title}>{report.title}</h1>
         <div className={styles.meta}>

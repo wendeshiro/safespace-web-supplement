@@ -11,6 +11,7 @@ import reports from "./data/report.json";
 import Dialog from "./components/Dialog";
 import ReportDetails from "./components/ReportDetails";
 import SummaryResult from "./components/SummaryResult";
+import BackButton from "./components/BackButton";
 
 // Dynamically import Map component with no SSR
 const Map = dynamic(() => import("./components/Map"), {
@@ -91,10 +92,19 @@ export default function PostedReports() {
 
       {/* Sidebar */}
       <div className={styles.sidebar}>
+        {(showSummary || selectedReport) && (
+          <BackButton
+            className={styles.backButton}
+            onClick={() => {
+              if (showSummary) setShowSummary(false);
+              if (selectedReport) setSelectedReport(null);
+            }}
+          />
+        )}
         {showSummary ? (
-          <SummaryResult onBack={() => setShowSummary(false)} />
+          <SummaryResult />
         ) : selectedReport ? (
-          <ReportDetails report={selectedReport} onBack={() => setSelectedReport(null)} />
+          <ReportDetails report={selectedReport} />
         ) : (
           <>
             <h1 className={styles.title}>Posted Reports</h1>
